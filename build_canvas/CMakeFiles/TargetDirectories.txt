@@ -1,0 +1,3 @@
+/home/douglasboza/cplus/magos/build_canvas/CMakeFiles/edit_cache.dir
+/home/douglasboza/cplus/magos/build_canvas/CMakeFiles/dcanvas.dir
+/home/douglasboza/cplus/magos/build_canvas/CMakeFiles/rebuild_cache.dir
