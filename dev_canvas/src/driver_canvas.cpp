@@ -12,7 +12,7 @@ int main(void)
 {
     // Cria um objeto canvas de 800 por 600 pixels de dimensão.
     Canvas c( 800, 600 );
-std::cout << "aqui3" << std::endl;
+// std::cout << "aqui3" << std::endl;
 
 
     // // Definie a cor de fundo da imagem.
@@ -23,9 +23,13 @@ std::cout << "aqui3" << std::endl;
     // Vamos utilizar uma linha com 3 pixels de largura.
     c.thickness( 3 );
     // Um retângulo pode ser formado através do desenho de 4 linhas.
-    c.hline( orig_x, orig_x, 300, RED );
+    
+    c.hline( orig_x, orig_x, 300, RED );  //aaa
+    
     c.vline( orig_x, orig_y, 200, STEEL_BLUE );
-    c.hline( orig_x, orig_y+200, 300, GREEN );
+    
+    c.hline( orig_x, orig_y+200, 300, GREEN );  //aaa
+
     c.vline( orig_x+300, orig_y, 200, YELLOW );
     // Preencher o interior do retângulo com um quadrado de 50 x 50 pixels.
     c.box( orig_x+125, orig_y+75, 50, 50, DEEP_SKY_BLUE );

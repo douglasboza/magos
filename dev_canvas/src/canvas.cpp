@@ -34,13 +34,13 @@ namespace canvas {
     void Canvas::clear( const Color& color )
     {
 
-          // m_pixels[0] = color.R;
-          // m_pixels[1] = color.G;
-          // m_pixels[2] = color.B;
+        //   m_pixels[0] = 0;
+        //   m_pixels[30] = 3;
+        //   m_pixels[50] = 5;
 
-        std::cout << color.R << std::endl;
-        std::cout << color.G << std::endl;
-        std::cout << color.B << std::endl;
+        // std::cout << color.R << std::endl;
+        // std::cout << color.G << std::endl;
+        // std::cout << color.B << std::endl;
 
 
         // TODO
@@ -63,7 +63,7 @@ namespace canvas {
      */
     void Canvas::pixel( coord_type x, coord_type y, const Color& c )
     {
-        // TODO
+       
     }
 
 
@@ -74,7 +74,16 @@ namespace canvas {
      */
     void Canvas::hline( coord_type x, coord_type y, size_t length, const Color& color )
     {
-        // TODO
+        for (auto j = 0; j < m_line_thikness; ++j)
+        {
+            for (size_t i = 1; i < length+1; ++i)
+            {    
+                m_pixels[ 3*((j+y)*m_width+x+i) ] = 255;
+                m_pixels[ 3*((j+y)*m_width+x+i)-1 ] = 0;
+                m_pixels[ 3*((j+y)*m_width+x+i)-2 ] = 0;
+            }
+            
+        }
     }
 
     /*!
@@ -84,7 +93,16 @@ namespace canvas {
      */
     void Canvas::vline( coord_type x, coord_type y, size_t length, const Color& color )
     {
-        // TODO
+        for (auto j = 0; j < m_line_thikness; ++j)
+        {
+            for (size_t i = 0; i < length; ++i)
+            {    
+                m_pixels[ 3*((y+i)*m_width+x+j)] = 57;
+                m_pixels[ 3*((y+i)*m_width+x+j)+1] = 239;
+                m_pixels[ 3*((y+i)*m_width+x+j)+2] = 236;
+            }
+            
+        }
     }
 
     /*!
@@ -96,7 +114,17 @@ namespace canvas {
      */
     void Canvas::box( coord_type x, coord_type y, size_t width, size_t height , const Color& color)
     {
-        // TODO
+
+        for (size_t i = 0; i < width; ++i)
+        {    
+            for (size_t j = 0; j < height; ++j)
+            {
+                m_pixels[3*((j+y)*m_width+x+i)] = 25;
+                m_pixels[3*((j+y)*m_width+x+i)] = 25;
+                m_pixels[3*((j+y)*m_width+x+i)] = 25;
+            }
+        }   
+     
     }
 }
 
